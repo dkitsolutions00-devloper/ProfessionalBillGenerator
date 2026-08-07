@@ -1,13 +1,13 @@
-package com.example.professionalbillgenerator
+package com.example.professionalbillgenerator;
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
 
-class MainActivity : AppCompatActivity() {
+public class MainActivity extends AppCompatActivity {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        setContentView(R.layout.activity_main)
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
     }
 }
