@@ -21,17 +21,18 @@ android {
         versionName "1.0"
     }
 
-    buildTypes {
+}
 
-        release {
+configurations.all {
 
-            minifyEnabled false
+    resolutionStrategy {
 
-            proguardFiles getDefaultProguardFile(
-                    'proguard-android-optimize.txt'
-            ), 'proguard-rules.pro'
-        }
+        force 'org.jetbrains.kotlin:kotlin-stdlib:1.8.22'
+        force 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22'
+        force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22'
+
     }
+
 }
 
 
