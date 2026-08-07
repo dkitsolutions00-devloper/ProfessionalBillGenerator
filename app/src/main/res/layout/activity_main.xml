@@ -1,40 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp">
+    android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Professional Bill Generator"
-        android:textSize="24sp"
-        android:gravity="center"
-        android:padding="20dp"/>
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <EditText
-        android:id="@+id/customerName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Customer Name"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PROFESSIONAL BILL"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="12dp" />
 
-    <EditText
-        android:id="@+id/mobileNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Mobile Number"
-        android:inputType="phone"/>
+        <EditText
+            android:id="@+id/businessName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Business / Shop Name"
+            android:inputType="text" />
 
-    <EditText
-        android:id="@+id/amount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Amount"
-        android:inputType="number"/>
+        <EditText
+            android:id="@+id/businessPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Business Mobile Number"
+            android:inputType="phone" />
 
-    <Button
+        <EditText
+            android:id="@+id/customerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Customer Name"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/mobileNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Customer Mobile Number"
+            android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/invoiceNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Invoice Number"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/itemName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Item / Service Name"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/quantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Quantity"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rate"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/gst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="GST %"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/discount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Discount"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/totalAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total: ₹0.00"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="18dp" />
+
+        <Button
+            android:id="@+id/generateBill"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GENERATE BILL"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</ScrollView>    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Generate Bill"/>
