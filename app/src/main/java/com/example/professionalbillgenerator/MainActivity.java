@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     EditText quantity, rate, gst, discount;
-    TextView totalAmount;
+    TextView subtotalAmount, gstAmount, totalAmount;
     Button generateBill;
 
     @Override
@@ -21,7 +21,11 @@ public class MainActivity extends AppCompatActivity {
         rate = findViewById(R.id.rate);
         gst = findViewById(R.id.gst);
         discount = findViewById(R.id.discount);
+
+        subtotalAmount = findViewById(R.id.subtotalAmount);
+        gstAmount = findViewById(R.id.gstAmount);
         totalAmount = findViewById(R.id.totalAmount);
+
         generateBill = findViewById(R.id.generateBill);
 
         generateBill.setOnClickListener(v -> calculateBill());
@@ -32,22 +36,31 @@ public class MainActivity extends AppCompatActivity {
         double qty = getNumber(quantity);
         double price = getNumber(rate);
         double gstPercent = getNumber(gst);
-        double discountAmount = getNumber(discount);
+        double discountValue = getNumber(discount);
 
         double subtotal = qty * price;
-        double gstAmount = subtotal * gstPercent / 100;
-        double total = subtotal + gstAmount - discountAmount;
+        double tax = subtotal * gstPercent / 100;
+        double total = subtotal + tax - discountValue;
 
         if (total < 0) {
             total = 0;
         }
 
+        subtotalAmount.setText(
+                String.format("Subtotal: ₹%.2f", subtotal)
+        );
+
+        gstAmount.setText(
+                String.format("GST: ₹%.2f", tax)
+        );
+
         totalAmount.setText(
-                String.format("Total: ₹%.2f", total)
+                String.format("Grand Total: ₹%.2f", total)
         );
     }
 
     private double getNumber(EditText field) {
+
         String value = field.getText().toString().trim();
 
         if (value.isEmpty()) {
